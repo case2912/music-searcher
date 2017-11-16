@@ -1,6 +1,7 @@
 {
   "name": "music-searcher",
   "version": "0.1.0",
+  "homepage": "http://case2912.github.io/music-searcher",
   "private": true,
   "dependencies": {
     "material-ui": "^1.0.0-beta.21",
@@ -15,13 +16,16 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/jest": "^21.1.6",
     "@types/node": "^8.0.53",
     "@types/react": "^16.0.23",
     "@types/react-dom": "^16.0.3",
-    "@types/react-redux": "^5.0.13"
+    "@types/react-redux": "^5.0.13",
+    "gh-pages": "^1.0.0"
   }
 }
