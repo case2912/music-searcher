@@ -1,19 +1,17 @@
 import * as React from "react";
-export default class Itemlist extends React.Component<{ json: {} }, {}> {
+import Item from "./Item";
+
+class Itemlist extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
     }
     public render() {
         return (
-            <div>
+            <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around" }}>
                 {Object.keys(this.props.json).length ?
                     (this.props.json as any).results.map((result: any) => {
                         return (
-                            <div key={result.trackId}>
-                                <p>{result.artistName}</p>
-                                <p>{result.trackName}</p>
-                                <video src={result.previewUrl} controls width="400" height="300" />
-                            </div>
+                            <Item {...result} key={result.trackId} />
                         );
                     })
                     : null}
@@ -21,3 +19,4 @@ export default class Itemlist extends React.Component<{ json: {} }, {}> {
         );
     }
 }
+export default Itemlist;
